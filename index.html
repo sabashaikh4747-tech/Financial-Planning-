@@ -1,522 +1,921 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Secure Tomorrow | Saba Shaikh | Financial Planning Consultation</title>
-    
-    <!-- Google Fonts for professional typography -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        /*--- Global Styles ---*/
-        :root {
-            --primary-blue: #5D5BFD; /* A slightly more vibrant version of the original */
-            --dark-purple: #3A356A; /* Good for headlines */
-            --light-bg: #F9FAFF; /* The calming background */
-            --text-main: #5C5F7F;
-            --white: #ffffff;
-            --whatsapp-green: #25D366; /* Correct WhatsApp green */
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="format-detection" content="telephone=no">
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--light-bg);
-            margin: 0;
-            padding: 0;
-            color: var(--text-main);
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
+<title>Secure Tomorrow | Saba Shaikh | Financial Planning Consultation</title>
 
-        h1, h2, h3, h4 {
-            color: var(--dark-purple);
-            font-weight: 700;
-            margin-top: 0;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-        h1 { font-size: 32px; line-height: 1.2; margin-bottom: 20px; }
-        h2 { font-size: 26px; line-height: 1.3; margin-bottom: 20px; text-align: center; }
-        p { font-size: 16px; line-height: 1.6; margin-bottom: 20px; }
+<style>
+:root {
+    --primary-blue: #5D5BFD;
+    --dark-purple: #3A356A;
+    --light-bg: #F9FAFF;
+    --text-main: #5C5F7F;
+    --white: #ffffff;
+    --whatsapp-green: #25D366;
+    --border: #E6E9F5;
+}
 
-        .container {
-            width: 90%;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 0;
-        }
+* {
+    box-sizing: border-box;
+}
 
-        a { text-decoration: none; }
+html {
+    scroll-behavior: smooth;
+}
 
-        /*--- Header ---*/
-        header {
-            background-color: var(--white);
-            padding: 20px 5%;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background: var(--light-bg);
+    color: var(--text-main);
+    -webkit-font-smoothing: antialiased;
+}
 
-        .logo-placeholder {
-            width: 140px; /* Placeholder for your logo image */
-            height: auto;
-            color: var(--dark-purple);
-            font-weight: bold;
-            font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-        }
-        .logo-placeholder:before {
-            content: "🌿"; /* Sample icon for the leaf logo */
-            font-size: 1.5rem;
-            margin-right: 8px;
-        }
+h1, h2, h3, h4 {
+    color: var(--dark-purple);
+    font-weight: 700;
+    margin-top: 0;
+}
 
-        .header-cta {
-            background-color: var(--whatsapp-green);
-            color: var(--white);
-            padding: 12px 24px;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 15px;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-        }
-        .header-cta:hover { opacity: 0.9; }
+h1 {
+    font-size: 34px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
 
-        /*--- Hero Section ---*/
-        .hero-container {
-            position: relative;
-            background-color: var(--white);
-            border-radius: 20px;
-            padding: 40px 30px;
-            overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.05);
-            display: flex;
-            flex-direction: column-reverse; /* Put image on top of text on mobile */
-            text-align: center;
-        }
+h2 {
+    font-size: 26px;
+    line-height: 1.3;
+    margin-bottom: 20px;
+    text-align: center;
+}
 
-        .hero-image-wrap {
-            margin-bottom: 30px;
-        }
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
 
-        .hero-img {
-            width: 100%;
-            max-width: 320px; /* Limits size on phone */
-            height: auto;
-            border-radius: 50%; /* Circle shape */
-            box-shadow: 0 10px 40px rgba(93, 91, 253, 0.2); /* Lavender glow */
-        }
+a {
+    text-decoration: none;
+}
 
-        .hero-content {
-            margin-bottom: 10px;
-        }
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
 
-        .btn {
-            display: inline-block;
-            background-color: var(--primary-blue);
-            color: var(--white);
-            padding: 16px 32px;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 18px;
-            border: none;
-            cursor: pointer;
-            transition: transform 0.2s, opacity 0.2s;
-            box-shadow: 0 6px 15px rgba(93, 91, 253, 0.25);
-            min-width: 250px;
-        }
-        .btn:active { transform: scale(0.97); }
-        .btn-form { background-color: var(--primary-blue); min-width: 100%; width: 100%; }
+/* HEADER */
 
-        /*--- SABA Shaikh Section ---*/
-        .saba-profile {
-            background-color: #EEEFFC; /* Reusing that light blue/lavender background shade */
-            padding: 50px 0;
-            margin-top: 50px;
-        }
-        .saba-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-        .saba-photo-placeholder {
-            width: 160px;
-            height: 160px;
-            background-color: #ccc;
-            border-radius: 50%;
-            margin-bottom: 30px;
-            border: 5px solid white;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            position: relative;
-        }
-        .saba-photo-placeholder:before {
-            content: "PROFILE PHOTO HERE"; /* Label to add your picture */
-            position: absolute; top: 50%; left: 50%;
-            transform: translate(-50%, -50%); color: #666; font-size: 12px;
-        }
-        
-        .saba-contact { font-weight: 600; font-size: 1.1rem; color: var(--dark-purple); margin-top: 10px;}
-        .saba-contact span { font-size: 0.9rem; color: var(--text-main); font-weight: normal; }
+header {
+    background: var(--white);
+    padding: 16px 5%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-        /*--- Service Cards ---*/
-        .services-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-            margin-top: 30px;
-        }
+.logo {
+    color: var(--dark-purple);
+    font-weight: 700;
+    font-size: 20px;
+}
 
-        .service-card {
-            background-color: var(--white);
-            padding: 25px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
-            border: 1px solid #E6E9F5;
-        }
+.header-cta {
+    background: var(--whatsapp-green);
+    color: var(--white);
+    padding: 11px 18px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 14px;
+}
 
-        .service-icon {
-            font-size: 30px;
-            margin-bottom: 15px;
-            color: var(--primary-blue);
-        }
+/* HERO */
 
-        .service-card h4 {
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: var(--dark-purple);
-        }
-        .service-card p { font-size: 14px; margin-bottom: 0;}
+.hero-container {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 45px 28px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+    text-align: center;
+}
 
-        /*--- Process Vertical on Mobile ---*/
-        .process-steps {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            margin-top: 30px;
-        }
-        .process-step {
-            background-color: var(--white);
-            padding: 20px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
-            position: relative;
-        }
-        .step-number {
-            width: 40px; height: 40px;
-            background-color: var(--primary-blue);
-            color: white;
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-weight: 700;
-            margin-right: 20px;
-            font-size: 18px;
-        }
-        .step-content h4 { margin-bottom: 4px; font-size: 16px;}
-        .step-content p { margin: 0; font-size: 14px;}
+.hero-content {
+    max-width: 680px;
+    margin: 0 auto;
+}
 
-        /*--- Lead Form Section ---*/
-        .form-section {
-            margin-top: 60px;
-            background-color: var(--white);
-            padding: 50px 30px;
-            border-radius: 20px;
-            box-shadow: 0 8px 30px rgba(93, 91, 253, 0.1);
-            text-align: left;
-        }
+.hero-subtitle {
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
 
-        .form-headline { text-align: left; margin-bottom: 10px; }
-        .form-subheadline { text-align: left; margin-bottom: 30px; }
+.btn {
+    display: inline-block;
+    background: var(--primary-blue);
+    color: var(--white);
+    padding: 16px 28px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(93,91,253,0.25);
+    -webkit-tap-highlight-color: transparent;
+}
 
-        .input-group {
-            margin-bottom: 25px;
-        }
+.btn:active {
+    transform: scale(0.98);
+}
 
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: var(--dark-purple);
-            font-size: 15px;
-        }
+/* PROFILE SECTION */
 
-        input[type="text"], input[type="email"], select {
-            width: 100%;
-            padding: 16px 18px;
-            border: 2px solid #E6E9F5;
-            border-radius: 12px;
-            font-size: 16px;
-            color: var(--text-main);
-            box-sizing: border-box;
-            background-color: #FBFBFF;
-            transition: border-color 0.3s;
-        }
+.saba-profile {
+    background: #EEEFFC;
+    padding: 15px 0;
+    margin-top: 40px;
+    border-radius: 20px;
+}
 
-        input:focus, select:focus {
-            outline: none;
-            border-color: var(--primary-blue);
-            background-color: var(--white);
-        }
-        
-        select {
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path fill="%235C5F7F" d="M1 4h10l-5 5-5-5z"/></svg>');
-            background-repeat: no-repeat;
-            background-position: calc(100% - 15px) center;
-        }
+.saba-content {
+    text-align: center;
+}
 
-        .btn-form {
-            background-color: var(--whatsapp-green);
-            box-shadow: 0 6px 15px rgba(37, 211, 102, 0.25);
-        }
+.saba-content h2 {
+    margin-bottom: 18px;
+}
 
-        /*--- Footer ---*/
-        footer {
-            background-color: #f1f3f8;
-            padding: 50px 0;
-            margin-top: 60px;
-            text-align: center;
-            color: #8C90A8;
-        }
-        footer .logo-placeholder { margin: 0 auto 20px auto; justify-content: center; opacity: 0.6;}
-        .footer-disclaimer { max-width: 600px; margin: 0 auto; font-size: 13px; line-height: 1.6; }
-        .social-links { margin-top: 25px; }
-        .social-link { font-size: 20px; color: #8C90A8; margin: 0 10px; opacity: 0.7;}
-        
-        /*--- Tablet/Desktop Media Queries (for responsiveness) ---*/
-        @media screen and (min-width: 600px) {
-            h1 { font-size: 40px; }
-            .hero-container {
-                flex-direction: row;
-                text-align: left;
-                padding: 60px;
-            }
-            .hero-image-wrap { margin-bottom: 0; margin-left: 50px; }
-            .hero-img { max-width: 320px; border-radius: 20px; } /* Rounded square on desktop */
-            .services-grid { grid-template-columns: repeat(3, 1fr); gap: 25px;}
-            .process-steps { flex-direction: row; gap: 15px; }
-            .process-step { text-align: center; flex-direction: column; flex: 1; padding: 30px; }
-            .step-number { margin-right: 0; margin-bottom: 20px; }
-            .saba-content { flex-direction: row; text-align: left; }
-            .saba-photo-placeholder { margin-right: 50px; margin-bottom: 0;}
-            .saba-profile .container { max-width: 700px; }
-            .form-section { padding: 60px; }
-        }
+.saba-contact {
+    font-weight: 600;
+    font-size: 17px;
+    color: var(--dark-purple);
+    margin-top: 20px;
+    margin-bottom: 0;
+}
 
-    </style>
+/* SERVICES */
+
+.services-section {
+    padding-top: 20px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.service-card {
+    background: var(--white);
+    padding: 25px 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    border: 1px solid var(--border);
+}
+
+.service-icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.service-card h4 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.service-card p {
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+/* PROCESS */
+
+.process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.process-step {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+}
+
+.step-number {
+    min-width: 42px;
+    height: 42px;
+    background: var(--primary-blue);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    margin-right: 18px;
+    font-size: 18px;
+}
+
+.step-content h4 {
+    margin-bottom: 4px;
+    font-size: 16px;
+}
+
+.step-content p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* FORM */
+
+.form-section {
+    margin-top: 50px;
+    background: var(--white);
+    padding: 35px 22px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(93,91,253,0.10);
+}
+
+.form-headline {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.form-subheadline {
+    text-align: left;
+    margin-bottom: 30px;
+    font-size: 15px;
+}
+
+.input-group {
+    margin-bottom: 22px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--dark-purple);
+    font-size: 15px;
+}
+
+input,
+select {
+    width: 100%;
+    min-height: 54px;
+    padding: 15px 16px;
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    font-size: 16px;
+    color: var(--text-main);
+    background: #FBFBFF;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+input:focus,
+select:focus {
+    border-color: var(--primary-blue);
+    background: var(--white);
+}
+
+select {
+    background-image:
+        linear-gradient(45deg, transparent 50%, #5C5F7F 50%),
+        linear-gradient(135deg, #5C5F7F 50%, transparent 50%);
+    background-position:
+        calc(100% - 20px) 23px,
+        calc(100% - 14px) 23px;
+    background-size: 6px 6px, 6px 6px;
+    background-repeat: no-repeat;
+}
+
+.btn-form {
+    width: 100%;
+    background: var(--whatsapp-green);
+    box-shadow: 0 6px 15px rgba(37,211,102,0.25);
+    margin-top: 5px;
+}
+
+.form-note {
+    text-align: center;
+    font-size: 12px;
+    color: #8C90A8;
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+/* SUCCESS MESSAGE */
+
+.success-message {
+    display: none;
+    margin-top: 20px;
+    padding: 16px;
+    border-radius: 12px;
+    background: #E9FFF1;
+    color: #176B35;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* FOOTER */
+
+footer {
+    background: #F1F3F8;
+    padding: 40px 20px;
+    margin-top: 50px;
+    text-align: center;
+    color: #8C90A8;
+}
+
+.footer-logo {
+    color: var(--dark-purple);
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 18px;
+}
+
+.footer-disclaimer {
+    max-width: 650px;
+    margin: 0 auto;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.copyright {
+    margin-top: 20px;
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+/* TABLET / DESKTOP */
+
+@media screen and (min-width: 600px) {
+
+    h1 {
+        font-size: 42px;
+    }
+
+    .hero-container {
+        padding: 65px 55px;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .process-steps {
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    .process-step {
+        flex: 1;
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 15px;
+    }
+
+    .step-number {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .form-section {
+        padding: 50px;
+    }
+}
+</style>
 </head>
+
 <body>
 
-    <!-- Simplified Header for Landing Page -->
-    <header>
-        <div class="logo-placeholder">Secure Tomorrow</div>
-        <a href="#leadsForm" class="header-cta btn">Start Free Plan</a>
-    </header>
+<!-- HEADER -->
 
-    <div class="container">
-        
-        <!-- Updated Hero Section -->
-        <section class="hero-container">
-            <div class="hero-content">
-                <h1>Build Your Family’s Confident Financial Future.</h1>
-                <p>Simple, personalized guidance from Saba Shaikh to help you secure a worry-free future, from education plans to comfortable retirement.</p>
-                <a href="#leadsForm" class="btn">Get Started Today →</a>
+<header>
+    <div class="logo">Secure Tomorrow</div>
+
+    <a href="#leadsForm" class="header-cta">
+        Start Free Consultation
+    </a>
+</header>
+
+
+<!-- MAIN CONTENT -->
+
+<div class="container">
+
+    <!-- HERO -->
+
+    <section class="hero-container">
+
+        <div class="hero-content">
+
+            <h1>
+                Build Your Family’s Confident Financial Future.
+            </h1>
+
+            <p class="hero-subtitle">
+                Simple, personalised financial guidance from Saba Shaikh
+                to help you plan for important goals, from children's
+                education to retirement and family protection.
+            </p>
+
+            <a href="#leadsForm" class="btn">
+                Get Started Today →
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- SABA PROFILE -->
+
+    <section class="saba-profile">
+
+        <div class="container saba-content">
+
+            <h2>
+                Meet Saba Shaikh, Your Trusted Financial Planner
+            </h2>
+
+            <p>
+                Hi, I'm Saba Shaikh, and I help families create a clear
+                roadmap for their financial goals. I offer personalised
+                guidance to help you make informed decisions and plan
+                according to your individual needs.
+            </p>
+
+            <p>
+                My goal is to understand your requirements and help you
+                work towards your financial goals with clarity.
+            </p>
+
+            <p class="saba-contact">
+                Call / WhatsApp: 9960058037
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- SERVICES -->
+
+    <section class="services-section">
+
+        <div class="container">
+
+            <h2>
+                Our Financial Guidance Services
+            </h2>
+
+            <div class="services-grid">
+
+                <div class="service-card">
+                    <div class="service-icon">🎓</div>
+                    <h4>Child Education Plan</h4>
+                    <p>
+                        Prepare today for your child's future education goals.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">💍</div>
+                    <h4>Marriage Plan</h4>
+                    <p>
+                        Plan financially for important future family milestones.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🏖️</div>
+                    <h4>Retirement Plan</h4>
+                    <p>
+                        Work towards financial independence during retirement.
+                    </p>
+                </div>
+
+                <!-- HEALTH INSURANCE INCLUDED -->
+
+                <div class="service-card">
+                    <div class="service-icon">🏥</div>
+                    <h4>Health Insurance</h4>
+                    <p>
+                        Explore health insurance options for protection
+                        against unexpected medical expenses.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">👨‍👩‍👧‍👦</div>
+                    <h4>Family Protection</h4>
+                    <p>
+                        Plan for financial protection for your loved ones.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📈</div>
+                    <h4>Wealth Creation</h4>
+                    <p>
+                        Explore long-term financial planning options for
+                        your wealth goals.
+                    </p>
+                </div>
+
             </div>
-            <div class="hero-image-wrap">
-                <!-- Using a high-quality hand-notebook photo is good. Here, I'm just labeling it for you. You would replace this with an image tag. -->
-                <img src="https://via.placeholder.com/320x320/EEEFFC/5D5BFD?text=Hand writing+on+notebook" alt="Financial Planning in Progress" class="hero-img">
+
+        </div>
+
+    </section>
+
+
+    <!-- PROCESS -->
+
+    <section>
+
+        <div class="container">
+
+            <h2>
+                Simple Steps to Your Goals
+            </h2>
+
+            <div class="process-steps">
+
+                <div class="process-step">
+
+                    <div class="step-number">1</div>
+
+                    <div class="step-content">
+                        <h4>Request Consultation</h4>
+                        <p>
+                            Share your contact details below.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="process-step">
+
+                    <div class="step-number">2</div>
+
+                    <div class="step-content">
+                        <h4>Share Your Goals</h4>
+                        <p>
+                            Discuss your needs and concerns.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="process-step">
+
+                    <div class="step-number">3</div>
+
+                    <div class="step-content">
+                        <h4>Get a Custom Plan</h4>
+                        <p>
+                            Receive personalised guidance.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="process-step">
+
+                    <div class="step-number">4</div>
+
+                    <div class="step-content">
+                        <h4>Move Forward</h4>
+                        <p>
+                            Continue with ongoing guidance and support.
+                        </p>
+                    </div>
+
+                </div>
+
             </div>
-        </section>
 
-        <!-- Trust-Building Profile Section -->
-        <section class="saba-profile">
-            <div class="container saba-content">
-                <div class="saba-photo-placeholder">
-                    <!-- Replace this whole div with <img src="saba_photo.jpg" alt="Saba Shaikh"> -->
-                </div>
-                <div>
-                    <h2>Meet Saba Shaikh, Your Trusted Financial Planner</h2>
-                    <p>Hi, I'm Saba Shaikh, and I help families like yours create a clear roadmap for their financial goals. I offer personalised guidance to help you make informed decisions, without any unrealistic promises about returns. My goal is to listen and help you make genuine progress.</p>
-                    <p class="saba-contact">Call / WhatsApp: 9960058037<br><span>Contact Saba</span></p>
-                </div>
+        </div>
+
+    </section>
+
+
+    <!-- LEAD FORM -->
+
+    <section id="leadsForm" class="form-section">
+
+        <h2 class="form-headline">
+            Book Your Free Consultation
+        </h2>
+
+        <p class="form-subheadline">
+            Please share your details. I'll review your information
+            and connect with you to discuss your requirements.
+        </p>
+
+
+        <form id="financialLeadForm">
+
+            <!-- NAME -->
+
+            <div class="input-group">
+
+                <label for="fullName">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="fullName"
+                    name="fullName"
+                    placeholder="Enter your full name"
+                    autocomplete="name"
+                    required
+                >
+
             </div>
-        </section>
 
-        <!-- Services (Mobile Responsive Cards) -->
-        <section>
-            <div class="container">
-                <h2>Our Clear Financial Guidance.</h2>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon">🎓</div>
-                        <h4>Child Education Plan</h4>
-                        <p>Prepare today for their higher education dreams.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">💍</div>
-                        <h4>Marriage Plan</h4>
-                        <p>Build a secure fund for their future and joy.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">🏖️</div>
-                        <h4>Retirement Plan</h4>
-                        <p>Stay financially independent and comfortable.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">👨‍👩‍👧‍👦</div>
-                        <h4>Family Protection</h4>
-                        <p>Ensure a security net for your loved ones.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">📈</div>
-                        <h4>Wealth Creation</h4>
-                        <p>Grow your wealth for long-term financial freedom.</p>
-                    </div>
-                </div>
+
+            <!-- MOBILE -->
+
+            <div class="input-group">
+
+                <label for="mobileNumber">
+                    Mobile Number (WhatsApp Preferred)
+                </label>
+
+                <input
+                    type="tel"
+                    id="mobileNumber"
+                    name="mobileNumber"
+                    placeholder="Enter your 10-digit mobile number"
+                    inputmode="numeric"
+                    autocomplete="tel"
+                    maxlength="10"
+                    required
+                >
+
             </div>
-        </section>
 
-        <!-- The Process (Simplified, Mobile-Friendly) -->
-        <section>
-            <div class="container">
-                <h2>Simple Steps to Your Goals</h2>
-                <div class="process-steps">
-                    <div class="process-step">
-                        <div class="step-number">1</div>
-                        <div class="step-content">
-                            <h4>Request Consultation</h4>
-                            <p>Share your contact details below.</p>
-                        </div>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
-                            <h4>Share Your Goals</h4>
-                            <p>We discuss your needs and concerns.</p>
-                        </div>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <h4>Get a Custom Plan</h4>
-                            <p>We prepare a clean, personalised plan.</p>
-                        </div>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-number">4</div>
-                        <div class="step-content">
-                            <h4>Secure Your Future</h4>
-                            <p>Ongoing support to meet your goals.</p>
-                        </div>
-                    </div>
-                </div>
+
+            <!-- EMAIL -->
+
+            <div class="input-group">
+
+                <label for="emailId">
+                    Email Address (Optional)
+                </label>
+
+                <input
+                    type="email"
+                    id="emailId"
+                    name="emailId"
+                    placeholder="Enter your email address"
+                    autocomplete="email"
+                >
+
             </div>
-        </section>
 
-        <!-- The Essential Lead Capture Form -->
-        <section id="leadsForm" class="form-section">
-            <h2 class="form-headline">Book Your Free Consultation</h2>
-            <p class="form-subheadline">Please share your details. I’ll review your information and connect to discuss your unique needs.</p>
-            
-            <form id="financialLeadForm">
-                <div class="input-group">
-                    <label for="fullName">Full Name</label>
-                    <input type="text" id="fullName" name="fullName" placeholder="e.g., Jane Watson" required>
-                </div>
-                
-                <div class="input-group">
-                    <label for="mobileNumber">Mobile Number (WhatsApp Preferred)</label>
-                    <input type="text" id="mobileNumber" name="mobileNumber" placeholder="9960058037" required pattern="[0-9]{10}">
-                </div>
 
-                <div class="input-group">
-                    <label for="emailId">Email Address (Optional)</label>
-                    <input type="email" id="emailId" name="emailId" placeholder="jane@email.com">
-                </div>
+            <!-- SERVICE DROPDOWN -->
 
-                <div class="input-group">
-                    <label for="interestTopic">What are you most interested in?</label>
-                    <select id="interestTopic" name="interestTopic" required>
-                        <option value="" disabled selected>Select an option...</option>
-                        <option value="Child Education Plan">Child Education Plan</option>
-                        <option value="Retirement Plan">Retirement Plan</option>
-                        <option value="Wealth Creation Plan">Wealth Creation Plan</option>
-                        <option value="Family Protection Plan">Family Protection Plan</option>
-                        <option value="General Financial Advice">General Financial Advice</option>
-                    </select>
-                </div>
+            <div class="input-group">
 
-                <button type="submit" class="btn btn-form">Get a Free Consultation Today! →</button>
-            </form>
-        </section>
+                <label for="interestTopic">
+                    What are you most interested in?
+                </label>
 
+                <select
+                    id="interestTopic"
+                    name="interestTopic"
+                    required
+                >
+
+                    <option value="" disabled selected>
+                        Select an option...
+                    </option>
+
+                    <option value="Child Education Plan">
+                        Child Education Plan
+                    </option>
+
+                    <option value="Marriage Plan">
+                        Marriage Plan
+                    </option>
+
+                    <option value="Retirement Plan">
+                        Retirement Plan
+                    </option>
+
+                    <!-- HEALTH INSURANCE IN DROPDOWN -->
+
+                    <option value="Health Insurance">
+                        Health Insurance
+                    </option>
+
+                    <option value="Family Protection Plan">
+                        Family Protection Plan
+                    </option>
+
+                    <option value="Wealth Creation Plan">
+                        Wealth Creation Plan
+                    </option>
+
+                    <option value="General Financial Advice">
+                        General Financial Advice
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- SUBMIT -->
+
+            <button
+                type="submit"
+                class="btn btn-form"
+                id="submitButton"
+            >
+                Get My Free Consultation →
+            </button>
+
+            <p class="form-note">
+                Your details will be used only to contact you regarding
+                your consultation request.
+            </p>
+
+            <div
+                id="successMessage"
+                class="success-message"
+            >
+                Your details are ready. WhatsApp will open next.
+                Please tap <strong>Send</strong> to share your request.
+            </div>
+
+        </form>
+
+    </section>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-logo">
+        Secure Tomorrow
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="logo-placeholder">Secure Tomorrow</div>
-            <p class="footer-disclaimer">Your information is secure and used only for our direct consultation. We are committed to provide clear and genuine financial guidance. We do not make unrealistic promises about investment returns.</p>
-            
-            <!-- These are just generic icon examples (using text emojis) -->
-            <div class="social-links">
-                <a href="#" class="social-link">FB</a>
-                <a href="#" class="social-link">IG</a>
-                <a href="#" class="social-link">LN</a>
-            </div>
-            <p style="margin-top:20px; font-size: 12px; opacity:0.6;">© 2023 Secure Tomorrow by Saba Shaikh</p>
-        </div>
-    </footer>
+    <p class="footer-disclaimer">
+        Your information is used only for direct consultation.
+        We aim to provide clear and personalised financial guidance.
+    </p>
 
-    <!-- JavaScript to create the magic WhatsApp link -->
-    <script>
-        document.getElementById('financialLeadForm').addEventListener('submit', function(e) {
-            e.preventDefault(); // Prevent standard form submission
+    <p>
+        Call / WhatsApp: 9960058037
+    </p>
 
-            // 1. Get the values from the form
-            const fullName = document.getElementById('fullName').value;
-            const mobileNumber = document.getElementById('mobileNumber').value;
-            const emailId = document.getElementById('emailId').value;
-            const interestTopic = document.getElementById('interestTopic').value;
+    <p class="copyright">
+        © 2026 Secure Tomorrow by Saba Shaikh
+    </p>
 
-            // 2. Format the numbers for the WhatsApp link (must remove spaces/pluses, only digits)
-            // Saba Shaikh's number (pre-filled as provided)
-            const targetPhone = "919960058037"; // Assuming India, so prefix '91'
+</footer>
 
-            // 3. Construct a clear, structured message with line breaks
-            let messageText = "Hi Saba, I'm interested in a Free Financial Consultation.\n\n" +
-                                "*Here are my details:*\n" +
-                                "*Name:* " + fullName + "\n" +
-                                "*Mobile:* " + mobileNumber + "\n";
-            
-            if (emailId) {
-                messageText += "*Email:* " + emailId + "\n";
-            }
-            
-            messageText += "*Interested in:* " + interestTopic;
 
-            // 4. Encode the text for the URL
-            const encodedMessage = encodeURIComponent(messageText);
+<!-- WHATSAPP -->
 
-            // 5. Create the special universal WhatsApp link. This works on iOS, Android, and Web.
-            const whatsappLink = "https://wa.me/" + targetPhone + "?text=" + encodedMessage;
+<script>
 
-            // 6. Redirect the visitor to the link, which will open the pre-filled message.
-            window.location.href = whatsappLink;
-        });
-    </script>
+document.getElementById("financialLeadForm").addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const fullName =
+        document.getElementById("fullName").value.trim();
+
+    const mobileNumber =
+        document.getElementById("mobileNumber").value.trim();
+
+    const emailId =
+        document.getElementById("emailId").value.trim();
+
+    const interestTopic =
+        document.getElementById("interestTopic").value;
+
+
+    /* Validate Indian mobile number */
+
+    if (!/^[6-9][0-9]{9}$/.test(mobileNumber)) {
+
+        alert(
+            "Please enter a valid 10-digit Indian mobile number."
+        );
+
+        return;
+
+    }
+
+
+    /* Your WhatsApp number */
+
+    const targetPhone = "919960058037";
+
+
+    /* Create WhatsApp message */
+
+    let messageText =
+        "Hi Saba, I'm interested in a Free Financial Consultation.%0A%0A" +
+        "*My Details:*%0A" +
+        "*Name:* " + fullName + "%0A" +
+        "*Mobile:* " + mobileNumber + "%0A";
+
+
+    if (emailId) {
+
+        messageText +=
+            "*Email:* " + emailId + "%0A";
+
+    }
+
+
+    messageText +=
+        "*Interested in:* " + interestTopic;
+
+
+    /* Show confirmation */
+
+    document.getElementById("successMessage").style.display = "block";
+
+
+    /* Prevent repeated taps */
+
+    const submitButton =
+        document.getElementById("submitButton");
+
+    submitButton.disabled = true;
+
+    submitButton.innerText =
+        "Opening WhatsApp...";
+
+
+    /*
+       Use WhatsApp's official web link.
+       This works with both WhatsApp and WhatsApp Web.
+    */
+
+    const whatsappLink =
+        "https://wa.me/" +
+        targetPhone +
+        "?text=" +
+        messageText;
+
+
+    /*
+       Small delay helps mobile browsers,
+       especially iPhone Safari, handle the redirect.
+    */
+
+    setTimeout(function() {
+
+        window.location.href = whatsappLink;
+
+    }, 400);
+
+});
+
+</script>
 
 </body>
 </html>
+
